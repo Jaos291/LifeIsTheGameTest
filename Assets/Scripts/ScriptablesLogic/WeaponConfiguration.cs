@@ -2,7 +2,16 @@ using UnityEngine;
 
 public class WeaponConfiguration : ScriptableObject
 {
+    [Header("Info")]
+    public string weaponName;
+
+    [Header("Shooting")]
     public float cadence;
-    public float maxCapacity;
+    
+
+    [Header("Reloading")]
+    public int maxCapacity;
+    public float fireRate;
+
     public GameObject bullet;
 }
