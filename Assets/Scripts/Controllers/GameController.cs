@@ -23,7 +23,16 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        _animator = MainCharacter.GetComponent<Animator>();
-        mainCharacterAnimator = _animator;
+        if (MainCharacter)
+        {
+            _animator = MainCharacter.GetComponent<Animator>();
+            mainCharacterAnimator = _animator;
+
+            if (PlayerPrefs.HasKey("MainCharacterAnimation"))
+            {
+                string currentAnimation = PlayerPrefs.GetString("MainCharacterAnimation");
+                _animator.SetBool(currentAnimation, true);
+            }
+        }
     }
 }

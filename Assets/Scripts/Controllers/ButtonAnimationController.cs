@@ -24,6 +24,9 @@ public class ButtonAnimationController : MonoBehaviour
 
         // Turn on the animation specified by the parameter
         _playerAnimator.SetBool(animationName, true);
+
+        //To Get Global animation name in any instance of the project
+        PlayerPrefs.SetString("MainCharacterAnimation", animationName);
     }
 
     private void GetPlayerAnimator()
