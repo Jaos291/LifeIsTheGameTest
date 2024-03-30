@@ -7,13 +7,20 @@ public class BulletConfiguration : ScriptableObject
     [Header("Behaviours:")]
     public bool parabolic;
     public float parabolicSpeed;
-    public float gravity;
+    public float parabolicGravity;
 
     public bool orbital;
     public string[] tagsToRotateAround;
     public float orbitationalSpeed;
 
     public bool special;
+    public float specialSpeed;
+    public float speciaGravity;
+    public GameObject explotion;
+    public float explotionRange;
+    public float explotionForce;
+    public bool explodeOnTouch;
+    public LayerMask whatIsEnemies;
 
     private void OnValidate()
     {

@@ -17,43 +17,15 @@ public class BulletLogic : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        if (bulletConfiguration.parabolic)
-        {
-            speed = bulletConfiguration.parabolicSpeed;
-            gravity = bulletConfiguration.gravity;
-            initialVelocity = transform.forward * speed;
-        }else if (bulletConfiguration.orbital)
-        {
-            speed = bulletConfiguration.orbitationalSpeed;
-        }
-        else if (bulletConfiguration.special)
-        {
-
-            
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        foreach (string orbitable in bulletConfiguration.tagsToRotateAround)
-        {
-            if (bulletConfiguration.orbital && other.gameObject.CompareTag(orbitable))
-            {
-                rb.velocity = Vector3.zero;
-                rb.angularVelocity = Vector3.zero;
-                rb.Sleep();
-                gameObject.tag = newTag;
-                objectToRotate = other.gameObject;
-            }
-        }
+        LoadBulletConfiguration();
     }
 
     private void Update()
     {
-        ShotBullet();
+        BulletBehavior();
     }
 
-    private void ShotBullet()
+    private void BulletBehavior()
     {
         if (bulletConfiguration.parabolic)
         {
@@ -86,7 +58,66 @@ public class BulletLogic : MonoBehaviour
 
     private void SpecialShot()
     {
+        initialVelocity.y -= gravity * Time.deltaTime;
 
+        transform.position += initialVelocity * Time.deltaTime;
+    }
+
+    private void LoadBulletConfiguration()
+    {
+        if (bulletConfiguration.parabolic)
+        {
+            speed = bulletConfiguration.parabolicSpeed;
+            gravity = bulletConfiguration.parabolicGravity;
+            initialVelocity = transform.forward * speed;
+        }
+        else if (bulletConfiguration.orbital)
+        {
+            speed = bulletConfiguration.orbitationalSpeed;
+        }
+        else if (bulletConfiguration.special)
+        {
+            speed = bulletConfiguration.specialSpeed;
+            gravity = bulletConfiguration.speciaGravity;
+        }
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        foreach (string orbitable in bulletConfiguration.tagsToRotateAround)
+        {
+            if (bulletConfiguration.orbital && other.gameObject.CompareTag(orbitable))
+            {
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+                rb.Sleep();
+                gameObject.tag = newTag;
+                objectToRotate = other.gameObject;
+            }
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (bulletConfiguration.special && bulletConfiguration.explotion && bulletConfiguration.explodeOnTouch)
+        {
+            GameObject explotion = Instantiate(bulletConfiguration.explotion, transform.position, Quaternion.identity);
+            Collider[] enemies = Physics.OverlapSphere(transform.position, bulletConfiguration.explotionRange, bulletConfiguration.whatIsEnemies);
+
+            Invoke("DelayDestroy", 0.25f);
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, bulletConfiguration.explotionRange);
+    }
+
+    private void DelayDestroy()
+    {
+        Destroy(gameObject);
     }
 
 }
