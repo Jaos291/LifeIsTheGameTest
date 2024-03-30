@@ -22,6 +22,11 @@ public class PlayerWeaponLogic : MonoBehaviour
         readyToShoot = true;
     }
 
+    private void Start()
+    {
+        _camera = GameController.Instance.mainCamera;
+    }
+
     private void Update()
     {
         FireInput();
@@ -105,7 +110,7 @@ public class PlayerWeaponLogic : MonoBehaviour
         Invoke("ReloadFinished", _weaponConfiguration.reloadTime);
     }
 
-    private void ReloadFinised()
+    private void ReloadFinished()
     {
         _weaponConfiguration.bulletsLeft = _weaponConfiguration.magazineSize;
         reloading = false;
