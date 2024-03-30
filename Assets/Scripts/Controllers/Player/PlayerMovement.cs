@@ -63,6 +63,31 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+            foreach (GameObject weapon in GameController.Instance.worldObjects)
+            {
+                weapon.SetActive(false);
+            }
+            GameController.Instance.worldObjects[0].SetActive(true);
+        }
+        if (Input.GetKey(KeyCode.Alpha2))
+        {
+            foreach (GameObject weapon in GameController.Instance.worldObjects)
+            {
+                weapon.SetActive(false);
+            }
+            GameController.Instance.worldObjects[1].SetActive(true);
+        }
+        if (Input.GetKey(KeyCode.Alpha3))
+        {
+            foreach (GameObject weapon in GameController.Instance.worldObjects)
+            {
+                weapon.SetActive(false);
+            }
+            GameController.Instance.worldObjects[2].SetActive(true);
+        }
     }
 
     private void MovePlayer()

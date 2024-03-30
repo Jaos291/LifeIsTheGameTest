@@ -7,7 +7,8 @@ public class GameController : MonoBehaviour
     //---------Singleton Logic
     public static GameController Instance;
 
-    [SerializeField] private GameObject MainCharacter;
+    [SerializeField] private GameObject _mainCharacter;
+    public GameObject[] worldObjects;
     public Camera mainCamera;
 
     //---------If we need any component reference of any object above, please list it below this point.
@@ -24,9 +25,17 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        if (MainCharacter)
+        if (worldObjects.Length>0)
         {
-            _animator = MainCharacter.GetComponent<Animator>();
+            foreach (GameObject weapon in worldObjects)
+            {
+                weapon.SetActive(false);
+            }
+        }
+
+        if (_mainCharacter)
+        {
+            _animator = _mainCharacter.GetComponent<Animator>();
             mainCharacterAnimator = _animator;
 
             if (PlayerPrefs.HasKey("MainCharacterAnimation"))

@@ -420,6 +420,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &135771791 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5887449432549751778, guid: 7ee8bd831ab3de74a9276d5c110d4143, type: 3}
+  m_PrefabInstance: {fileID: 338617728}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &138415680
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,7 +752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5887449432549751778, guid: 7ee8bd831ab3de74a9276d5c110d4143, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5887449432549751781, guid: 7ee8bd831ab3de74a9276d5c110d4143, type: 3}
       propertyPath: m_RootOrder
@@ -867,6 +872,26 @@ PrefabInstance:
       propertyPath: MainCharacter
       value: 
       objectReference: {fileID: 934525078}
+    - target: {fileID: 3856708227246722419, guid: 6268cf389e7475849a80ed4ec20d5470, type: 3}
+      propertyPath: _mainCharacter
+      value: 
+      objectReference: {fileID: 934525078}
+    - target: {fileID: 3856708227246722419, guid: 6268cf389e7475849a80ed4ec20d5470, type: 3}
+      propertyPath: worldObjects.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3856708227246722419, guid: 6268cf389e7475849a80ed4ec20d5470, type: 3}
+      propertyPath: worldObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 135771791}
+    - target: {fileID: 3856708227246722419, guid: 6268cf389e7475849a80ed4ec20d5470, type: 3}
+      propertyPath: worldObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 638259767}
+    - target: {fileID: 3856708227246722419, guid: 6268cf389e7475849a80ed4ec20d5470, type: 3}
+      propertyPath: worldObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 375721998}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6268cf389e7475849a80ed4ec20d5470, type: 3}
 --- !u!1001 &375721996
@@ -1348,7 +1373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3532748923795514961, guid: 164985366b5dc894683d7684ffd99da3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3532748923795514962, guid: 164985366b5dc894683d7684ffd99da3, type: 3}
       propertyPath: m_RootOrder
