@@ -12,7 +12,6 @@ public class BulletConfiguration : ScriptableObject
     public bool orbital;
     public string[] tagsToRotateAround;
     public float orbitationalSpeed;
-    public float timeToCompleteOneRotation;
 
     public bool special;
 

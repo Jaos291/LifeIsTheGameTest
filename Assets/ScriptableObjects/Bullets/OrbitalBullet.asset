@@ -18,6 +18,6 @@ MonoBehaviour:
   orbital: 1
   tagsToRotateAround:
   - Orbitable
-  orbitationalSpeed: 500
+  orbitationalSpeed: 50
   timeToCompleteOneRotation: 5
   special: 0

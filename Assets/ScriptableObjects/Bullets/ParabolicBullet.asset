@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: ParabolicBullet
   m_EditorClassIdentifier: 
   parabolic: 1
-  parabolicSpeed: 10
-  gravity: 50
+  parabolicSpeed: 7.5
+  gravity: 35
   orbital: 0
+  tagsToRotateAround: []
+  orbitationalSpeed: 0
+  timeToCompleteOneRotation: 0
   special: 0

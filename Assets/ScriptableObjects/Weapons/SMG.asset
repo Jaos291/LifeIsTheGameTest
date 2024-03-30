@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: SMG
   m_EditorClassIdentifier: 
   weaponName: SMG
-  shootForce: 300
+  shootForce: 100
   upwardForce: 0
-  timeBetweenShooting: 0.1
-  spread: 3
+  timeBetweenShooting: 1
+  spread: 0
   timeBetweenShots: 0
   reloadTime: 1.5
   bulletsPerTap: 1
   allowButtonHold: 0
   magazineSize: 100
-  bulletsLeft: 76
+  bulletsLeft: 94
   bulletsShot: 1
   fireRate: 0
   bullet: {fileID: 464899373671593410, guid: f2d46c5b74a748e4784b23f1aaff7b02, type: 3}

@@ -10,6 +10,8 @@ public class BulletLogic : MonoBehaviour
     private float gravity;
     private Vector3 initialVelocity;
     private Rigidbody rb;
+    private string newTag = "Orbitable";
+    private GameObject objectToRotate;
 
     private void Start()
     {
@@ -20,6 +22,9 @@ public class BulletLogic : MonoBehaviour
             speed = bulletConfiguration.parabolicSpeed;
             gravity = bulletConfiguration.gravity;
             initialVelocity = transform.forward * speed;
+        }else if (bulletConfiguration.orbital)
+        {
+            speed = bulletConfiguration.orbitationalSpeed;
         }
         else if (bulletConfiguration.special)
         {
@@ -34,12 +39,11 @@ public class BulletLogic : MonoBehaviour
         {
             if (bulletConfiguration.orbital && other.gameObject.CompareTag(orbitable))
             {
-                Debug.Log("Entered");
                 rb.velocity = Vector3.zero;
                 rb.angularVelocity = Vector3.zero;
                 rb.Sleep();
-
-                LeanTween.rotateAround(other.gameObject, transform.position, bulletConfiguration.orbitationalSpeed, bulletConfiguration.timeToCompleteOneRotation);
+                gameObject.tag = newTag;
+                objectToRotate = other.gameObject;
             }
         }
     }
@@ -73,7 +77,11 @@ public class BulletLogic : MonoBehaviour
 
     private void OrbitalShot()
     {
-        
+        if (objectToRotate)
+        {
+            objectToRotate.gameObject.transform.RotateAround(transform.position, Vector3.up, Time.deltaTime * speed);
+        }
+
     }
 
     private void SpecialShot()
