@@ -21,10 +21,11 @@ MonoBehaviour:
   special: 1
   specialSpeed: 0
   speciaGravity: 0
-  explotion: {fileID: 0}
-  explotionRange: 3
-  explotionForce: 0
+  explotion: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1, type: 3}
+  explotionRange: 10
+  explotionForce: 1200
   explodeOnTouch: 1
   whatIsEnemies:
     serializedVersion: 2
     m_Bits: 64
+  tagToExplodeAtTouch: Enemies

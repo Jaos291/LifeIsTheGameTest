@@ -21,6 +21,7 @@ public class BulletConfiguration : ScriptableObject
     public float explotionForce;
     public bool explodeOnTouch;
     public LayerMask whatIsEnemies;
+    public string tagToExplodeAtTouch;
 
     private void OnValidate()
     {

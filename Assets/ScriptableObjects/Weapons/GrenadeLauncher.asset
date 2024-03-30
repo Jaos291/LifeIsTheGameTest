@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 590a82a15c6f9f1448e6744efb0dfb2a, type: 3}
+  m_Name: GrenadeLauncher
+  m_EditorClassIdentifier: 
+  weaponName: GrenadeLauncher
+  shootForce: 50
+  upwardForce: 0
+  timeBetweenShooting: 1
+  spread: 0
+  timeBetweenShots: 0
+  reloadTime: 1.5
+  bulletsPerTap: 1
+  allowButtonHold: 0
+  magazineSize: 100
+  bulletsLeft: 94
+  bulletsShot: 1
+  fireRate: 0
+  bullet: {fileID: 464899373671593410, guid: f53310bbdd9f4194897a097b0f6cb72e, type: 3}
+  allowInvoke: 1

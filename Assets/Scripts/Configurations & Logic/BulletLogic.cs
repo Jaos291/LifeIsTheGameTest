@@ -100,12 +100,20 @@ public class BulletLogic : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (bulletConfiguration.special && bulletConfiguration.explotion && bulletConfiguration.explodeOnTouch)
+        if (bulletConfiguration.special && bulletConfiguration.explotion && bulletConfiguration.explodeOnTouch && collision.gameObject.tag.Equals(bulletConfiguration.tagToExplodeAtTouch))
         {
             GameObject explotion = Instantiate(bulletConfiguration.explotion, transform.position, Quaternion.identity);
+            explotion.transform.parent = transform;
             Collider[] enemies = Physics.OverlapSphere(transform.position, bulletConfiguration.explotionRange, bulletConfiguration.whatIsEnemies);
+            for (int i = 0; i < enemies.Length; i++)
+            {
+                if (enemies[i].GetComponent<Rigidbody>())
+                {
+                    enemies[i].GetComponent<Rigidbody>().AddExplosionForce(bulletConfiguration.explotionForce, transform.position, bulletConfiguration.explotionRange);
+                }
+            }
 
-            Invoke("DelayDestroy", 0.25f);
+            Invoke("DelayDestroy", 1f);
         }
     }
 
@@ -114,6 +122,7 @@ public class BulletLogic : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, bulletConfiguration.explotionRange);
     }
+
 
     private void DelayDestroy()
     {

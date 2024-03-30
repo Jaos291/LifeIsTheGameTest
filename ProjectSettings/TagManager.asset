@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Orbitable
   - Bullet
+  - Enemies
   layers:
   - Default
   - TransparentFX
