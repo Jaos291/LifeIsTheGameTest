@@ -76,7 +76,7 @@ public class PlayerWeaponLogic : MonoBehaviour
         _currentBullet = Instantiate(_weaponConfiguration.bullet, attackPoint.position, Quaternion.identity);
         _currentBullet.transform.forward = directionWithSpread.normalized;
 
-        _currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * _weaponConfiguration.shootForce, ForceMode.Impulse);
+        _currentBullet.GetComponent<Rigidbody>().AddForce(directionWithoutSpread.normalized * _weaponConfiguration.shootForce, ForceMode.Impulse);
         _currentBullet.GetComponent<Rigidbody>().AddForce(_camera.transform.up * _weaponConfiguration.upwardForce, ForceMode.Impulse);
 
         if (muzzleFlash) Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);

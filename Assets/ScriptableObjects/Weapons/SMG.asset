@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 590a82a15c6f9f1448e6744efb0dfb2a, type: 3}
-  m_Name: New Weapon Configuration
+  m_Name: SMG
   m_EditorClassIdentifier: 
-  weaponName: Pistol
+  weaponName: SMG
   shootForce: 300
   upwardForce: 0
   timeBetweenShooting: 0.1
@@ -25,5 +25,5 @@ MonoBehaviour:
   bulletsLeft: 76
   bulletsShot: 1
   fireRate: 0
-  bullet: {fileID: 464899373671593410, guid: a0b1cc64eff53aa4d8bce2b7e0b5da70, type: 3}
+  bullet: {fileID: 464899373671593410, guid: f2d46c5b74a748e4784b23f1aaff7b02, type: 3}
   allowInvoke: 1
