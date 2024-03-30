@@ -74,7 +74,7 @@ public class PlayerWeaponLogic : MonoBehaviour
 
         Vector3 directionWithSpread = directionWithoutSpread + (new Vector3(x,y,0));
         _currentBullet = Instantiate(_weaponConfiguration.bullet, attackPoint.position, Quaternion.identity);
-        _currentBullet.transform.forward = directionWithSpread.normalized;
+        _currentBullet.transform.forward = directionWithoutSpread.normalized;
 
         _currentBullet.GetComponent<Rigidbody>().AddForce(directionWithoutSpread.normalized * _weaponConfiguration.shootForce, ForceMode.Impulse);
         _currentBullet.GetComponent<Rigidbody>().AddForce(_camera.transform.up * _weaponConfiguration.upwardForce, ForceMode.Impulse);

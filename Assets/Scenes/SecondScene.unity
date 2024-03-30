@@ -713,7 +713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5887449432549751778, guid: 7ee8bd831ab3de74a9276d5c110d4143, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5887449432549751781, guid: 7ee8bd831ab3de74a9276d5c110d4143, type: 3}
       propertyPath: m_RootOrder
@@ -733,31 +733,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5887449432549751781, guid: 7ee8bd831ab3de74a9276d5c110d4143, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.98302007
+      value: 0.9997435
       objectReference: {fileID: 0}
     - target: {fileID: 5887449432549751781, guid: 7ee8bd831ab3de74a9276d5c110d4143, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.0023445785
       objectReference: {fileID: 0}
     - target: {fileID: 5887449432549751781, guid: 7ee8bd831ab3de74a9276d5c110d4143, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.18349828
+      value: 0.015223164
       objectReference: {fileID: 0}
     - target: {fileID: 5887449432549751781, guid: 7ee8bd831ab3de74a9276d5c110d4143, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.01660319
       objectReference: {fileID: 0}
     - target: {fileID: 5887449432549751781, guid: 7ee8bd831ab3de74a9276d5c110d4143, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 5887449432549751781, guid: 7ee8bd831ab3de74a9276d5c110d4143, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 21.147
+      value: 1.749
       objectReference: {fileID: 0}
     - target: {fileID: 5887449432549751781, guid: 7ee8bd831ab3de74a9276d5c110d4143, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 1.907
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100774699207551825, guid: 7ee8bd831ab3de74a9276d5c110d4143, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0275
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ee8bd831ab3de74a9276d5c110d4143, type: 3}
@@ -885,6 +889,10 @@ PrefabInstance:
     - target: {fileID: 2967893401005709350, guid: e0cfa2d0d504e13458ed5aaee87ff24c, type: 3}
       propertyPath: m_Name
       value: SNIPER - GREEN
+      objectReference: {fileID: 0}
+    - target: {fileID: 2967893401005709350, guid: e0cfa2d0d504e13458ed5aaee87ff24c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0cfa2d0d504e13458ed5aaee87ff24c, type: 3}

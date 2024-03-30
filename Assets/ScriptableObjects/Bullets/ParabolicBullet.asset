@@ -13,10 +13,19 @@ MonoBehaviour:
   m_Name: ParabolicBullet
   m_EditorClassIdentifier: 
   parabolic: 1
-  parabolicSpeed: 7.5
-  gravity: 35
+  parabolicSpeed: 10
+  parabolicGravity: 18
   orbital: 0
   tagsToRotateAround: []
   orbitationalSpeed: 0
-  timeToCompleteOneRotation: 0
   special: 0
+  specialSpeed: 0
+  speciaGravity: 0
+  explotion: {fileID: 0}
+  explotionRange: 0
+  explotionForce: 0
+  explodeOnTouch: 0
+  whatIsEnemies:
+    serializedVersion: 2
+    m_Bits: 0
+  tagToExplodeAtTouch: 
