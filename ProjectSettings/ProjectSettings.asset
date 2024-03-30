@@ -145,7 +145,8 @@ PlayerSettings:
   resolutionScalingMode: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Standalone: com.DefaultCompany.LifeIsTheGameTest
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -667,7 +668,7 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 0
+  activeInputHandler: 2
   cloudProjectId: 9e6bba4c-1568-4c07-9239-e2281f7c0d0e
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []

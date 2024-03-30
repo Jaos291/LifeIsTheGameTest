@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     public static GameController Instance;
 
     [SerializeField] private GameObject MainCharacter;
+    public Camera mainCamera;
 
     //---------If we need any component reference of any object above, please list it below this point.
     private Animator _animator;
