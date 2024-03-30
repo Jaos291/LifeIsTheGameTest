@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 14782373}
   m_Layer: 6
   m_Name: Cube (2)
-  m_TagString: Enemies
+  m_TagString: Orbitable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -320,6 +320,7 @@ GameObject:
   - component: {fileID: 129924627}
   - component: {fileID: 129924626}
   - component: {fileID: 129924625}
+  - component: {fileID: 129924629}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Orbitable
@@ -403,6 +404,22 @@ Transform:
   m_Father: {fileID: 538008268}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &129924629
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129924624}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &138415680
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,6 +522,7 @@ GameObject:
   - component: {fileID: 245084969}
   - component: {fileID: 245084968}
   - component: {fileID: 245084967}
+  - component: {fileID: 245084971}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Orbitable
@@ -588,6 +606,22 @@ Transform:
   m_Father: {fileID: 538008268}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &245084971
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245084966}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &330268665
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,7 +637,7 @@ GameObject:
   - component: {fileID: 330268667}
   m_Layer: 6
   m_Name: Cube (1)
-  m_TagString: Enemies
+  m_TagString: Orbitable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -713,7 +747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5887449432549751778, guid: 7ee8bd831ab3de74a9276d5c110d4143, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5887449432549751781, guid: 7ee8bd831ab3de74a9276d5c110d4143, type: 3}
       propertyPath: m_RootOrder
@@ -892,7 +926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2967893401005709350, guid: e0cfa2d0d504e13458ed5aaee87ff24c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0cfa2d0d504e13458ed5aaee87ff24c, type: 3}
@@ -1070,6 +1104,7 @@ GameObject:
   - component: {fileID: 439925652}
   - component: {fileID: 439925651}
   - component: {fileID: 439925650}
+  - component: {fileID: 439925654}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Orbitable
@@ -1153,6 +1188,22 @@ Transform:
   m_Father: {fileID: 538008268}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &439925654
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439925649}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &538008267
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,7 +1530,7 @@ GameObject:
   - component: {fileID: 806404381}
   m_Layer: 6
   m_Name: Cube (10)
-  m_TagString: Enemies
+  m_TagString: Orbitable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1742,7 +1793,7 @@ GameObject:
   - component: {fileID: 974105908}
   m_Layer: 6
   m_Name: Cube (9)
-  m_TagString: Enemies
+  m_TagString: Orbitable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1851,6 +1902,7 @@ GameObject:
   - component: {fileID: 1026055521}
   - component: {fileID: 1026055520}
   - component: {fileID: 1026055519}
+  - component: {fileID: 1026055523}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Orbitable
@@ -1934,6 +1986,22 @@ Transform:
   m_Father: {fileID: 538008268}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1026055523
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026055518}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1045454626
 GameObject:
   m_ObjectHideFlags: 0
@@ -1949,7 +2017,7 @@ GameObject:
   - component: {fileID: 1045454628}
   m_Layer: 6
   m_Name: Cube (6)
-  m_TagString: Enemies
+  m_TagString: Orbitable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2136,7 +2204,7 @@ GameObject:
   - component: {fileID: 1193734983}
   m_Layer: 6
   m_Name: Cube (3)
-  m_TagString: Enemies
+  m_TagString: Orbitable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2390,6 +2458,7 @@ GameObject:
   - component: {fileID: 1486814582}
   - component: {fileID: 1486814581}
   - component: {fileID: 1486814580}
+  - component: {fileID: 1486814584}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Orbitable
@@ -2473,6 +2542,22 @@ Transform:
   m_Father: {fileID: 538008268}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1486814584
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486814579}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1531661720
 GameObject:
   m_ObjectHideFlags: 0
@@ -2488,7 +2573,7 @@ GameObject:
   - component: {fileID: 1531661722}
   m_Layer: 6
   m_Name: Cube (8)
-  m_TagString: Enemies
+  m_TagString: Orbitable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3059,7 +3144,7 @@ GameObject:
   - component: {fileID: 1888503905}
   m_Layer: 6
   m_Name: Cube
-  m_TagString: Enemies
+  m_TagString: Orbitable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3316,7 +3401,7 @@ GameObject:
   - component: {fileID: 1935400520}
   m_Layer: 6
   m_Name: Cube (5)
-  m_TagString: Enemies
+  m_TagString: Orbitable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3428,7 +3513,7 @@ GameObject:
   - component: {fileID: 2027806727}
   m_Layer: 6
   m_Name: Cube (7)
-  m_TagString: Enemies
+  m_TagString: Orbitable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

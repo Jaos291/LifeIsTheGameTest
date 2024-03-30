@@ -28,4 +28,4 @@ MonoBehaviour:
   whatIsEnemies:
     serializedVersion: 2
     m_Bits: 64
-  tagToExplodeAtTouch: Enemies
+  tagToExplodeAtTouch: Orbitable
