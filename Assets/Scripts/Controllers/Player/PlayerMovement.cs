@@ -1,33 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed;
-
     public float groundDrag;
-
-    [HideInInspector] public float walkSpeed;
-    [HideInInspector] public float sprintSpeed;
+    public Transform orientation;
 
     [Header("GroundCheck")]
     public float playerHeight;
     public LayerMask whatIsGround;
-    bool grounded;
 
-    public Transform orientation;
-
-    float horizontalInput;
-    float verticalInput;
-
-    Vector3 moveDirection;
-
-    Rigidbody rb;
-
-    [HideInInspector] public TextMeshProUGUI text_speed;
+    private Rigidbody rb;
+    private bool grounded;
 
     private void Start()
     {
@@ -37,61 +22,36 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight *0.5f + 0.2f, whatIsGround); 
-
-        MyInput();
-
-        if (grounded)
-        {
-            rb.drag = groundDrag;
-        }
-        else
-        {
-            rb.drag = 0;
-        }
-
-
-        SpeedControl();
+        HandleInput();
+        ControlSpeed();
     }
 
     private void FixedUpdate()
     {
+        GroundCheck();
         MovePlayer();
     }
 
-    private void SwitchWeapon(int index)
+    private void GroundCheck()
     {
-        foreach (GameObject obj in GameController.Instance.worldObjects)
-        {
-            if (obj != null)
-            {
-                obj.SetActive(false);
-            }
-        }
-
-        // Activa el arma seleccionada
-        if (GameController.Instance.worldObjects[index] != null)
-        {
-            GameController.Instance.worldObjects[index].SetActive(true);
-        }
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+        rb.drag = grounded ? groundDrag : 0f;
     }
 
-    private void MyInput()
+    private void HandleInput()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        float verticalInput = Input.GetAxisRaw("Vertical");
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SwitchWeapon(0);
-
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-
             SwitchWeapon(1);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             SwitchWeapon(2);
         }
@@ -99,21 +59,40 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        // calculate movement direction
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-
-        rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+        if (grounded)
+        {
+            Vector3 moveDirection = orientation.forward * Input.GetAxisRaw("Vertical") + orientation.right * Input.GetAxisRaw("Horizontal");
+            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+        }
     }
 
-    private void SpeedControl()
+    private void ControlSpeed()
     {
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-        // limit velocity if needed
         if (flatVel.magnitude > moveSpeed)
         {
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+        }
+    }
+
+    private void SwitchWeapon(int index)
+    {
+        if (GameController.Instance.worldObjects != null && index >= 0 && index < GameController.Instance.worldObjects.Length)
+        {
+            foreach (GameObject obj in GameController.Instance.worldObjects)
+            {
+                if (obj != null)
+                {
+                    obj.SetActive(false);
+                }
+            }
+
+            if (GameController.Instance.worldObjects[index] != null)
+            {
+                GameController.Instance.worldObjects[index].SetActive(true);
+            }
         }
     }
 }
