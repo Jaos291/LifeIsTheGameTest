@@ -6,6 +6,10 @@ public class ButtonAnimationController : MonoBehaviour
 {
     private Animator _playerAnimator;
 
+    private void Awake()
+    {
+        PlayerPrefs.DeleteAll();
+    }
     public void OnButtonClick(string animationName)
     {
         //Get Reference of Player Animator
