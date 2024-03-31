@@ -115,4 +115,28 @@ public class PlayerWeaponLogic : MonoBehaviour
         _weaponConfiguration.bulletsLeft = _weaponConfiguration.magazineSize;
         reloading = false;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            /*System.Array.Resize(ref GameController.Instance.worldObjects, GameController.Instance.worldObjects.Length + 1);
+            GameController.Instance.worldObjects[GameController.Instance.worldObjects.Length - 1] = gameObject;
+            gameObject.transform.SetParent(GameController.Instance.weaponPosition);
+            GameController.Instance.worldObjects[GameController.Instance.worldObjects.Length - 1].transform.position = GameController.Instance.weaponPosition.position;
+            gameObject.transform.localRotation = Quaternion.identity;
+            GameController.Instance.worldObjects[GameController.Instance.worldObjects.Length - 1].gameObject.SetActive(false);*/
+
+
+            //------
+            GameController.Instance.worldObjects[GameController.Instance._weaponArrayPosition] = gameObject;
+            gameObject.transform.SetParent(GameController.Instance.weaponPosition);
+            GameController.Instance.worldObjects[GameController.Instance._weaponArrayPosition].transform.position = GameController.Instance.weaponPosition.position;
+            GameController.Instance._weaponArrayPosition++;
+            gameObject.transform.localRotation = Quaternion.identity;
+            gameObject.SetActive(false);
+        }
+    }
+
+    
 }

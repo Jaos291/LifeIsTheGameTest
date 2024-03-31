@@ -10,6 +10,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject _mainCharacter;
     public GameObject[] worldObjects;
     public Camera mainCamera;
+    public Transform weaponPosition;
+
 
     //---------If we need any component reference of any object above, please list it below this point.
     private Animator _animator;
@@ -18,6 +20,9 @@ public class GameController : MonoBehaviour
 
     [HideInInspector] public Animator mainCharacterAnimator;
 
+
+    [HideInInspector] public int _weaponArrayPosition = 0;
+
     private void Awake()
     {
         Instance = this;
@@ -25,14 +30,6 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        if (worldObjects.Length>0)
-        {
-            foreach (GameObject weapon in worldObjects)
-            {
-                weapon.SetActive(false);
-            }
-        }
-
         if (_mainCharacter)
         {
             _animator = _mainCharacter.GetComponent<Animator>();
