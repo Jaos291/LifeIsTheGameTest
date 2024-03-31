@@ -59,6 +59,23 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer();
     }
 
+    private void SwitchWeapon(int index)
+    {
+        foreach (GameObject obj in GameController.Instance.worldObjects)
+        {
+            if (obj != null)
+            {
+                obj.SetActive(false);
+            }
+        }
+
+        // Activa el arma seleccionada
+        if (GameController.Instance.worldObjects[index] != null)
+        {
+            GameController.Instance.worldObjects[index].SetActive(true);
+        }
+    }
+
     private void MyInput()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -66,50 +83,17 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            if (GameController.Instance.worldObjects[0])
-            {
-                for (int i = 0; i < GameController.Instance.worldObjects.Length; i++)
-                {
-                    if (GameController.Instance.worldObjects[i].activeSelf)
-                    {
-                        GameController.Instance.worldObjects[i].SetActive(false);
-                    }
-                }
+            SwitchWeapon(0);
 
-                GameController.Instance.worldObjects[0].SetActive(true);
-            }
-            
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
 
-            if (GameController.Instance.worldObjects[1])
-            {
-                for (int i = 0; i < GameController.Instance.worldObjects.Length; i++)
-                {
-                    if (GameController.Instance.worldObjects[i].activeSelf)
-                    {
-                        GameController.Instance.worldObjects[i].SetActive(false);
-                    }
-                }
-
-                GameController.Instance.worldObjects[1].SetActive(true);
-            }
+            SwitchWeapon(1);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            if (GameController.Instance.worldObjects[2])
-            {
-                for (int i = 0; i < GameController.Instance.worldObjects.Length; i++)
-                {
-                    if (GameController.Instance.worldObjects[i].activeSelf)
-                    {
-                        GameController.Instance.worldObjects[i].SetActive(false);
-                    }
-                }
-
-                GameController.Instance.worldObjects[2].SetActive(true);
-            }
+            SwitchWeapon(2);
         }
     }
 

@@ -21,7 +21,7 @@ public class GameController : MonoBehaviour
     [HideInInspector] public Animator mainCharacterAnimator;
 
 
-    [HideInInspector] public int _weaponArrayPosition = 0;
+    [HideInInspector] public int _weaponIndex = 0;
 
     private void Awake()
     {
@@ -41,5 +41,11 @@ public class GameController : MonoBehaviour
                 _animator.SetBool(currentAnimation, true);
             }
         }
+    }
+
+    public void AddWeapon(GameObject weapon)
+    {
+        worldObjects[_weaponIndex] = weapon;
+        _weaponIndex++;
     }
 }

@@ -19,7 +19,7 @@ public class PlayerWeaponLogic : MonoBehaviour
     private void Awake()
     {
         _weaponConfiguration.bulletsLeft = _weaponConfiguration.magazineSize;
-        readyToShoot = true;
+        readyToShoot = false;
     }
 
     private void Start()
@@ -129,10 +129,11 @@ public class PlayerWeaponLogic : MonoBehaviour
 
 
             //------
-            GameController.Instance.worldObjects[GameController.Instance._weaponArrayPosition] = gameObject;
+            readyToShoot = true;
+            GameController.Instance.worldObjects[GameController.Instance._weaponIndex] = gameObject;
             gameObject.transform.SetParent(GameController.Instance.weaponPosition);
-            GameController.Instance.worldObjects[GameController.Instance._weaponArrayPosition].transform.position = GameController.Instance.weaponPosition.position;
-            GameController.Instance._weaponArrayPosition++;
+            GameController.Instance.worldObjects[GameController.Instance._weaponIndex].transform.position = GameController.Instance.weaponPosition.position;
+            GameController.Instance._weaponIndex++;
             gameObject.transform.localRotation = Quaternion.identity;
             gameObject.SetActive(false);
         }

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5887449432549751781}
   - component: {fileID: 8100774698374467745}
-  - component: {fileID: 2264925322166358138}
   - component: {fileID: 4932305689342968116}
+  - component: {fileID: 2264925322166358138}
   m_Layer: 0
   m_Name: PISTOL - BLUE
   m_TagString: Untagged
@@ -51,6 +51,19 @@ MonoBehaviour:
   muzzleFlash: {fileID: 0}
   ammunitionDisplay: {fileID: 0}
   attackPoint: {fileID: 8100774699207551825}
+--- !u!65 &4932305689342968116
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5887449432549751778}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.25, y: 0.25, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &2264925322166358138
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -67,19 +80,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &4932305689342968116
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5887449432549751778}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.25, y: 0.25, z: 0.5}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8100774699207551826
 GameObject:
   m_ObjectHideFlags: 0
